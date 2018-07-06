@@ -18,6 +18,8 @@
     "eslint": "^5.0.1",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "sequelize": "^4.38.0",
+    "sqlite3": "^4.0.1"
   }
 }

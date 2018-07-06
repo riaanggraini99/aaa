@@ -13,8 +13,7 @@ router.post('/', (req, res) => {
     res.send({ 
         message :`hello ${req.body.email} your user was registered`
     })
-    console.log("why")
-    
+    console.log("user added")
 })
 
 
