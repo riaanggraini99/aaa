@@ -1,20 +1,18 @@
 var express = require('express');
 var router = express.Router();
-
-// router.get('/', (req, res) => {
-//     res.send({ 
-//         message :`hello your user was registered`
-//     })
-//     console.log("why")
-    
-// })
-
-router.post('/', (req, res) => {
-    res.send({ 
-        message :`hello ${req.body.email} your user was registered`
-    })
-    console.log("user added")
-})
+const { userController } = require('../controllers/register.js');
+//const register = require('../controllers/register');
+const { body, validationResult } = require('express-validator/check');
 
 
-module.exports = router;
+router.post('/',(req, res) => {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(422).json(response(false, errors.array()));
+      }
+      userController.create(req, res);
+    }
+  );
+
+module.exports = router
+
