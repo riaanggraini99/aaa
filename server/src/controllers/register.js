@@ -1,4 +1,4 @@
-const {User}  = require('../../models/User')
+const {User}  = require('../../models')
 //const register = require('../routes/register');
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     }catch(err){
         //if email already exist
         res.status(400).send({
-            error: "this email is already exist"
+            error: "error"
         })
 }
 }
